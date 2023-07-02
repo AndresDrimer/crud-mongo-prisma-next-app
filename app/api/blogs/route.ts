@@ -17,6 +17,7 @@ return NextResponse.json({ message: "Error detail: ", err }, { status: 500,});
  // “agregar un documento a la colección”
 export const POST =  async (req: Request, res: Response) => { 
 console.log("POST REQUEST"); 
+
 //lo mismo, esta tambien se va una vez probada la conexion, por:
 const { title, desc } = await req.json(); 
 try{
