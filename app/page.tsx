@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 async function fetchBlogs() {
-  const apiUrl = process.env.API_URL
-  const res = await fetch(`${apiUrl}/api/blog`, {
+  //const apiUrl = process.env.API_URL
+  const res = await fetch('/api/blog', {
     cache: "no-cache"
   });
   const data = await res.json();
