@@ -8,8 +8,11 @@ type UpdateBlogParams = {
   description: string;
   id: string;
 };
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+
 const updateBlog = async (data: UpdateBlogParams) => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+  
   const res = fetch(`${baseUrl}/api/blog/${data.id}`, {
     method: "PUT",
     body: JSON.stringify({ title: data.title, description: data.description }),
@@ -20,7 +23,7 @@ const updateBlog = async (data: UpdateBlogParams) => {
 };
 
 const deleteBlog = async (id: string) => {
-  const res = fetch(`http://localhost:3000/api/blog/${id}`, {
+  const res = fetch(`${baseUrl}/api/blog/${id}`, {
     method: "DELETE",
     //@ts-ignore
     "Content-Type": "application/json",
@@ -29,7 +32,7 @@ const deleteBlog = async (id: string) => {
 };
 
 const getBlogById = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${id}`);
+  const res = await fetch(`${baseUrl}/api/blog/${id}`);
   const data = await res.json();
   return data.post;
 };
