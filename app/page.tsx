@@ -16,7 +16,7 @@ export default async function Home() {
     <main className="w-full h-full">
       <div className="md:w-2/4 sm:w-3/4 m-auto p-4 my-5 rounded-lg bg-slate-800 drop-shadow-xl">
         <h1 className="text-slate-200 text-center text-2xl font-extrabold font-[verdana]">
-          FULL STACK Blog App <br/> <span className="text-lg">Next.js 13.4 + MongoDb + Prisma</span>
+          FULL STACK Blog App <br/> <span className="text-lg">Next.js 13.4 + MongoDb + Prisma </span>
         </h1>
       </div>
       {/* Link */}
