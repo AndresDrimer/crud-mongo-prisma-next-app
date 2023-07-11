@@ -11,7 +11,8 @@ const postBlog = async ({
   title: string;
   description: string;
 }) => {
-  const res = fetch("http://localhost:3000/api/blog", {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+  const res = fetch(`${baseUrl}/api/blog`, {
     method: "POST",
     body: JSON.stringify({ title, description }),
     //@ts-ignore
