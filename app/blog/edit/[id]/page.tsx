@@ -12,7 +12,7 @@ type UpdateBlogParams = {
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
 const updateBlog = async (data: UpdateBlogParams) => {
-  
+  console.log(baseUrl)
   const res = fetch(`${baseUrl}/api/blog/${data.id}`, {
     method: "PUT",
     body: JSON.stringify({ title: data.title, description: data.description }),
