@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 async function fetchBlogs() {
   //const apiUrl = process.env.API_URL
@@ -10,7 +12,18 @@ async function fetchBlogs() {
 }
 
 export default async function Home() {
-  const posts = await fetchBlogs();
+  const [posts, setPosts] = useState([]);
+
+  useEffect(()=>{
+    async function fetchData(){
+      const data = await fetchBlogs();
+      setPosts(data)
+    }
+   fetchData()
+
+  },[]);
+  
+  
  
   return (
     <main className="w-full h-full">
