@@ -54,6 +54,7 @@ const AddBlog = () => {
               type="text"
               className="rounded-md px-4 w-full py-2 my-2 "
             />
+            
             <textarea
               ref={descriptionRef}
               placeholder="Enter Description"

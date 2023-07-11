@@ -44,6 +44,7 @@ const EditBlog = ({ params }: { params: { id: string } }) => {
       .then((data) => {
         if (titleRef.current && descriptionRef.current) {
           titleRef.current.value = data.title;
+          
           descriptionRef.current.value = data.description;
           toast.success("Fetching Complete", { id: "1" });
         }
@@ -89,6 +90,7 @@ const EditBlog = ({ params }: { params: { id: string } }) => {
               type="text"
               className="rounded-md px-4 w-full py-2 my-2 "
             />
+           
             <textarea
               ref={descriptionRef}
               placeholder="Enter Description"

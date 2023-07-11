@@ -20,7 +20,7 @@ export const GET = async (req: Request, res: NextResponse) => {
 export const PUT = async (req: Request, res: NextResponse) => {
   try {
     const id = req.url.split("/blog/")[1];
-    const { title, description } = await req.json();
+    const { title, description, author } = await req.json();
     await main();
     const post = await prisma.post.update({
       data: { title, description }, // los paso en el body del request en postman

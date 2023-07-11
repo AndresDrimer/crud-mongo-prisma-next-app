@@ -28,7 +28,7 @@ export const POST = async (req: Request, res: NextResponse) => {
     try{
         const { title, description } = await req.json()
         await main();
-        const post = await prisma.post.create({data:{description, title}})
+        const post = await prisma.post.create({data:{ description, title }})
         return NextResponse.json({message: "POST enviado!", post}, {status:201,})
     } catch(err){
      return NextResponse.json({ message: "Error connecting", err }, {status: 500,})
