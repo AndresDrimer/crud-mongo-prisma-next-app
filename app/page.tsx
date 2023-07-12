@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 async function fetchBlogs() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-  const res = await fetch(`${baseUrl}/api/blog`, {
+  //const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+  const res = await fetch(`api/blog`, {
     cache: "no-cache"
   });
   const data = await res.json();
