@@ -1,17 +1,13 @@
 import { NextResponse } from "next/server";
 import { main } from "../route";
 import prisma from "@/prisma";
-import cors from "cors";
 
-const corsMiddleware = cors({
-  origin: "https://crud-mongo-prisma-next-app-zehl-kf6076oia-andresdrimer.vercel.app",
-  methods: ["GET", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type"],
-});
+
+
 
 export const GET = async (req: Request, res: NextResponse) => {
   try {
-    await corsMiddleware(req, res); 
+
     const id = req.url.split("/blog/")[1];
     await main();
     const post = await prisma.post.findFirst({ where: { id } });

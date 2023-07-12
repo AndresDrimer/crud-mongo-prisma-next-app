@@ -1,11 +1,7 @@
 import prisma from "@/prisma"
 import { NextResponse } from "next/server"
-import cors from "cors";
 
-const corsMiddleware = cors({
-  origin: "https://crud-mongo-prisma-next-app-zehl-kf6076oia-andresdrimer.vercel.app",
-  methods: ["GET", "POST"],
-});
+
 
 export async function main(){
     try{
